@@ -6,7 +6,6 @@ const MinaRuntimePlugin = require('./plugin/MinaRuntimePlugin');
 const LodashWebpackPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
 const debuggable = process.env.BUILD_TYPE !== 'release';
-
 module.exports = {
   context: resolve('src'),
   entry: './app.js',
@@ -16,6 +15,13 @@ module.exports = {
     // 微信小程序的全局对象为  wx 而非默认的 window
     globalObject: 'wx'
   },
+//   resolve: {
+//     modules: ['src', 'node_modules'],
+//     extensions: ['.js'],
+//     alias: {
+//       '@':resolve(__dirname,'..','/src'),
+//     }
+//   },
   module: {
     rules: [
       {
