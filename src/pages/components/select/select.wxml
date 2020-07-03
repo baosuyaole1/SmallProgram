@@ -1,0 +1,17 @@
+<view class="select-box">
+  <view class="select-current" catchtap="openClose">
+    <text class="current-name">{{current.name}}</text>
+    <view class="select_icon">
+      <image class="{{isShow?'':'rotate'}}" src="/assets/IntotheItem/arrow.png" mode="widthFix"/>
+    </view>
+  </view>
+  <scroll-view scroll-y="true"  class="option-list" wx:if="{{isShow}}">
+    <view class="option {{item.id==current.id?'active':''}}"
+      wx:for="{{result}}"
+      wx:key="{{item.id}}"
+      data-id="{{item.id}}"
+      data-name="{{item.name}}"
+      bindtap="optionTap">{{item.name}}
+    </view>
+  </scroll-view>
+</view>
